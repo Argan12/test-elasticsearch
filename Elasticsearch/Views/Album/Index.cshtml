@@ -1,0 +1,14 @@
+@model IEnumerable<Elasticsearch.Models.GetAlbums>
+
+<div class="list-group">
+    @foreach (Elasticsearch.Models.GetAlbums album in Model)
+    {
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">@album.Name (@album.Artist)</h5>
+                <small>@album.Year</small>
+            </div>
+            <small class="text-muted">@album.Genres</small>
+        </a>
+    }
+</div>

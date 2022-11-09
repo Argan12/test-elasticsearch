@@ -1,0 +1,13 @@
+@model IEnumerable<Elasticsearch.Models.Artist>
+
+<div class="list-group">
+    @foreach (Elasticsearch.Models.Artist artist in Model)
+    {
+        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">@artist.Name</h5>
+            </div>
+            <small class="text-muted">@artist.Genres</small>
+        </a>
+    }
+</div>
