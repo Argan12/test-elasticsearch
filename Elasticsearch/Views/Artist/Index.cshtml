@@ -1,12 +1,17 @@
 @model IEnumerable<Elasticsearch.Models.Artist>
 
+<div class="text-right mb-3">
+    <a href="@Url.Action("New", "Artist")" class="btn btn-primary">Ajouter</a>
+</div>
+
 <div class="list-group">
     @foreach (Elasticsearch.Models.Artist artist in Model)
     {
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <a href="@Url.Action("Details", "Artist", new { id = @artist.Id })" class="list-group-item list-group-item-action flex-column align-items-start">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">@artist.Name</h5>
             </div>
+            <p>@artist.Description</p>
             <small class="text-muted">@artist.Genres</small>
         </a>
     }

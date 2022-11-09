@@ -27,5 +27,7 @@ namespace Elasticsearch.Controllers
         /// </summary>
         /// <returns>View</returns>
         public IActionResult Index() => View(albumService.GetAll());
+
+        public IActionResult New() => View();
     }
 }

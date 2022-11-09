@@ -63,11 +63,17 @@ namespace Elasticsearch.Models
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
+                entity.Property(e => e.Description)
+                    .HasColumnType("text")
+                    .HasColumnName("DESCRIPTION");
+
                 entity.Property(e => e.Genres)
+                    .IsRequired()
                     .HasMaxLength(250)
                     .HasColumnName("GENRES");
 
                 entity.Property(e => e.Name)
+                    .IsRequired()
                     .HasMaxLength(100)
                     .HasColumnName("NAME");
             });

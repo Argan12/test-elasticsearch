@@ -1,0 +1,22 @@
+@model Elasticsearch.Models.Artist
+
+<h1>Ajouter un nouvel artiste</h1>
+
+@using (Html.BeginForm(FormMethod.Post, new { @id = "newArtistForm" }))
+{
+    <div class="form-group">
+        <label for="Name">Nom</label>
+        @Html.TextBoxFor(Model => Model.Name, new { @class="form-control" })
+    </div>
+    <div class="form-group">
+        <label for="Description">Description :</label>
+        @Html.TextAreaFor(Model => Model.Description, new { @class="form-control" })
+    </div>
+    <div class="form-group">
+        <label for="Genres">Genres :</label>
+        @Html.TextBoxFor(Model => Model.Genres, new { @class="form-control" })
+    </div>
+    <div class="text-right">
+        <button type="submit" id="newArtistSubmit" class="btn btn-primary">Ajouter</button>
+    </div>
+}

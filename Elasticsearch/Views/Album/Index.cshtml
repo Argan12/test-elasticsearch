@@ -1,5 +1,9 @@
 @model IEnumerable<Elasticsearch.Models.GetAlbums>
 
+<div class="text-right mb-3">
+    <a href="@Url.Action("New", "Album")" class="btn btn-primary">Ajouter</a>
+</div>
+
 <div class="list-group">
     @foreach (Elasticsearch.Models.GetAlbums album in Model)
     {

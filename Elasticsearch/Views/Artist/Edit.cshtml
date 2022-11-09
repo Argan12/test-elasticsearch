@@ -1,0 +1,22 @@
+@model Elasticsearch.Models.Artist
+
+<h1>Modifier l'artiste &laquo; @Model.Name &raquo;</h1>
+
+@using (Html.BeginForm(FormMethod.Post, new { @id = "editArtistForm" }))
+{
+    <div class="form-group">
+        <label for="Name">Nom</label>
+        @Html.TextBoxFor(Model => Model.Name, new { @class="form-control", @value="@Model.Name" })
+    </div>
+    <div class="form-group">
+        <label for="Description">Description :</label>
+        @Html.TextAreaFor(Model => Model.Description, new { @class="form-control", @value="@Model.Description" })
+    </div>
+    <div class="form-group">
+        <label for="Genres">Genres :</label>
+        @Html.TextBoxFor(Model => Model.Genres, new { @class="form-control", @value="@Model.Genres" })
+    </div>
+    <div class="text-right">
+        <button type="submit" id="editArtistSubmit" class="btn btn-primary">Modifier</button>
+    </div>
+}
