@@ -7,15 +7,28 @@ using System.Linq;
 
 namespace Elasticsearch.Services
 {
+    /// <summary>
+    /// Service Albums
+    /// Contains methods about albums
+    /// </summary>
     public class AlbumService
     {
         private readonly ElasticsearchContext context;
 
+        /// <summary>
+        /// Constructor
+        /// Initialize DbContext
+        /// </summary>
+        /// <param name="context">DbContext</param>
         public AlbumService(ElasticsearchContext context)
         {
             this.context = context;
         }
 
+        /// <summary>
+        /// Get all albums
+        /// </summary>
+        /// <returns>Stored procedure</returns>
         public List<GetAlbums> GetAll()
         {
             try

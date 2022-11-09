@@ -5,15 +5,28 @@ using System.Linq;
 
 namespace Elasticsearch.Services
 {
+    /// <summary>
+    /// Service Artist
+    /// Contains methods about artists
+    /// </summary>
     public class ArtistService
     {
         private readonly ElasticsearchContext context;
 
+        /// <summary>
+        /// Constructor
+        /// Initialize DbContext
+        /// </summary>
+        /// <param name="context">DbContext</param>
         public ArtistService(ElasticsearchContext context)
         {
             this.context = context;
         }
 
+        /// <summary>
+        /// Get all artists
+        /// </summary>
+        /// <returns>Artists</returns>
         public List<Artist> GetAll()
         {
             try
