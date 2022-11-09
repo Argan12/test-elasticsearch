@@ -71,7 +71,10 @@ body {
 }
 
 /* Forms */
-#newArtistForm {
+#newArtistForm,
+#editArtistForm,
+#newAlbumForm,
+#editAlbumForm {
   width: 75%;
   margin: auto;
   margin-top: 20px;

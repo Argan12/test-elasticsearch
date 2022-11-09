@@ -1,1 +1,31 @@
-<p>Add new album</p>
+@model Elasticsearch.Models.ViewModels.AlbumViewModel
+
+<h1>Ajouter un nouvel album</h1>
+
+@using (Html.BeginForm(FormMethod.Post, new { @id = "newAlbumForm" }))
+{
+    <div class="form-group">
+        <label for="Name">Nom</label>
+        @Html.TextBoxFor(Model => Model.Album.Name, new { @class="form-control" })
+    </div>
+    <div class="form-group">
+        <label for="Artist">Artiste :</label>
+        <select class="form-control" name="Album.Artist">
+            @foreach (Elasticsearch.Models.Artist artist in Model.Artists)
+            {
+                <option value="@artist.Id">@artist.Name</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="Year">Année :</label>
+        @Html.TextBoxFor(Model => Model.Album.Year, new { @class="form-control" })
+    </div>
+    <div class="form-group">
+        <label for="Genres">Genres :</label>
+        @Html.TextBoxFor(Model => Model.Album.Genres, new { @class="form-control" })
+    </div>
+    <div class="text-right">
+        <button type="submit" id="newAlbumSubmit" class="btn btn-primary">Ajouter</button>
+    </div>
+}
