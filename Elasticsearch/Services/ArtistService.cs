@@ -106,6 +106,13 @@ namespace Elasticsearch.Services
         {
             try
             {
+                // First step : remove all albums produced by the artist
+                List<Album> albums = _context.Albums
+                    .Where(a => a.Artist == id)
+                    .ToList();
+                _context.Albums.RemoveRange(albums);
+
+                // Second step : remove artist
                 Artist artist = _context.Artists.FirstOrDefault(a => a.Id == id);
                 _context.Artists.Remove(artist);
                 _context.SaveChanges();
